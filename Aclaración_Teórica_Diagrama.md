@@ -1,0 +1,15 @@
+## 5 Conceptos Vistos en la Materia
+
+1. Encapsulamiento: A la hora de trabajar con el descuento de los Vips, el valor del descuento dice el enunciado que es particular para cada asistente. Pero la productora debe poder modificar el descuento de los vips. Como el atributo es del Vip, y un objeto por fuera no debe poder modificar los valores del objeto (que son propios del objeto y privados), se arma el mensaje "bonificar()" para que pueda mandarle ese mensaje el objeto productora y así modificarlo por otro objeto.
+
+2. Clases y Herencia: Al tener que generar distintos tipos de bandas, sabemos que tienen atributos en común a todas las bandas (por ejemplo que todas tienen un nombre o un canon especifico), pero sumado a eso, cada banda que genera objetos tiene sus propios atributos que se repiten, por lo que decidi armar una Clase Banda general que cumple con todas las bandas, y despues creé clases especificas de cada tipo de banda que hereden los valores de la clase general Banda (la cual es llamada SuperClase).
+
+3. Well-Known Object: Hay objetos que necesitan ser conocidos por todo el sistema y no se van a instanciar mas de un objeto con sus caracteristicas, por lo que lo definimos como un objeto bien conocido (en este caso, a la productora) permitiendo que interactue con todos los otros objetos del sistema. Gracias a esto, es posible que maneje los impuestos de las entradas, diga las bandas mas populares o maneje la bonificación de los vips, estando inmerso en la vida de los demas objetos (o clases que generen objetos específicos).
+
+4. Bloques y Colecciones: Como se trabaja con colecciones de elementos (ya sea por ejemplo en el historial de las entradas compradas por los asistentes), es necesario poder recorrerlas para trabajar con ellas, ya sea añadiendole datos (causandoles un efecto) o buscando un valor de retorno para verificar algo (utilizando funciones que no causan efecto) para el manejo o impresión de sus valores internos. Para recorrer cada valor, se utilizan los bloques que permiten generar objetos de uso unico dentro del metodo (como si fueran objetos descartables).
+
+5. Polimorfismo: Todas las bandas, indistintamente de que tipo de banda sea o que atributos tenga, deben poder responder a los mismos mensajes. Asi es el uso del polimorfismo, para que el usuario pueda enviar los mensajes indistintamente de cada objeto, permitiendo comunicarse con todos sin la necesidad de saber con que objeto se esta trabajando. Esto permite que los otros objetos (por ejemplo cuando la productora maneja los presupuestos para restarlos de la ganancia total) puedan comunicarse con todos los objetos que son del tipo banda, ya que todos manejan el mismo mensaje "presupuesto()" con la misma cantidad de parametros dentro.
+
+## Diagrama de Clases del TP
+
+![Imagen del Diagrama de Clases](Diagrama_De_Clases_TP.png)
